@@ -272,14 +272,16 @@
         flex-direction: column;
         gap: 10px;
       }
-
+      #team-inputs {
+        flex-direction: column;
+        align-items: center;
+      }
       .team-scores {
         flex-direction: column;
         align-items: center;
       }
 
       .team {
-        width: 100%;
         max-width: 300px;
       }
 
@@ -297,44 +299,55 @@
     }
 
     @media (max-width: 480px) {
-      .timer {
-        font-size: 4em;
-      }
+  /* Fix Team Score Alignment */
+  .team-scores {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-      .controls button {
-        font-size: 1em;
-        padding: 8px 16px;
-      }
+  .team {
+    max-width: 300px;
+  }
 
-      .team div {
-        font-size: 1.2em;
-      }
+  /* Fix Overlapping Popups */
+  .popup-form,
+  .popup-form2 {
+    width: 90%;
+    max-width: 400px;
+    position: fixed;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
 
-      .team button {
-        font-size: 1em;
-        padding: 8px;
-      }
+  .popup-form {
+    z-index: 1002;
+  }
 
-      .popup-form input,
-      .popup-form select,
-      .popup-form button,
-      .timercontrol input,
-      .timercontrol button {
-        font-size: 0.9em;
-        padding: 8px;
-      }
+  .popup-form2 {
+    z-index: 1001;
+  }
 
-      .popup-form2 table th,
-      .popup-form2 table td {
-        padding: 10px;
-        font-size: 0.9em;
-      }
+  /* Adjust Timer and Buttons */
+  .timer {
+    font-size: 3em;
+  }
 
-      .popup-form2 .export-button {
-        font-size: 1em;
-        padding: 8px 16px;
-      }
-    }
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+}
 
   </style>
 </head>
